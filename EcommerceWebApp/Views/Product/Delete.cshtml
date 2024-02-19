@@ -1,0 +1,60 @@
+﻿@model Product
+<div class="container-fluid">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col-md-12 col-md-p-0">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Delete Product</h1>
+                                </div>
+                                <form method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <input type="text" asp-for="Name" readonly class="form-control form-control-user" placeholder="Name">
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" asp-for="Description" readonly class="form-control form-control-user" placeholder="Description">
+                                      
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" asp-for="Price" readonly class="form-control form-control-user" placeholder="Product Price">
+                                    
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control mb-3 mt-3 p-1" readonly
+                                                asp-for="CategoryId" asp-items="ViewBag.CategoryList">
+                                            <option selected disabled>--Select Category--</option>
+                                        </select>
+                                    </div>
+                                    <input type="submit" class="btn btn-danger" value="Delete Product" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                            @if (!string.IsNullOrEmpty(Model.Image))
+                            {
+                                <img class="img-fluid w-50 p-3" src="~/@Model.Image" />
+                            }
+                            else
+                            {
+                                <span>No image available</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

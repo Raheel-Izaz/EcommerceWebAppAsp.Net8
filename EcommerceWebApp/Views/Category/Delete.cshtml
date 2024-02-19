@@ -1,0 +1,58 @@
+﻿@model Category
+<div class="container-fluid">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col-md-12 col-md-p-0">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Delete Category</h1>
+                                </div>
+                                <form method="post">
+                                    <div class="form-group">
+                                        <input type="text" asp-for="CategoryName" readonly class="form-control form-control-user" placeholder="Cateory Name">
+                                       
+                                    </div>
+                                    <input class="btn btn-danger" data-toggle="modal" value="Delete" data-target="#deleteCategory" />
+
+                                    <div class="modal fade" id="deleteCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure? You want to delete!</h5>
+                                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">Select "Delete" below if you are ready to delete this Category.</div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                    <input class="btn btn-danger" type="submit" value="Delete" data-target="#deleteCategory" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
